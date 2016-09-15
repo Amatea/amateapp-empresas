@@ -1,0 +1,22 @@
+{
+  "name": "amateapp-empresas",
+  "version": "1.0.0",
+  "description": "Aplicacion huella ecologica para empresas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Amatea/amateapp-empresas.git"
+  },
+  "author": "Andres Sarmiento",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Amatea/amateapp-empresas/issues"
+  },
+  "homepage": "https://github.com/Amatea/amateapp-empresas",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
