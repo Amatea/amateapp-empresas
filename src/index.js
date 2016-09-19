@@ -1,6 +1,6 @@
-import Chart from 'chart.js';
+var Chart = require('chart.js');
 
-var ctx = $("#myChart");
+var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
