@@ -69298,4 +69298,6 @@ var material = require('angular-material'),
     aria = require('angular-aria'),
     animate = require('angular-animate');
 
+angular.module('App', ['ngMaterial']);
+
 },{"angular":8,"angular-animate":2,"angular-aria":4,"angular-material":6}]},{},[9]);

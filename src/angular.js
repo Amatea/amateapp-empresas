@@ -3,3 +3,6 @@ var material = require('angular-material'),
     aria = require('angular-aria'),
     animate = require('angular-animate');
 
+angular.module('App', [
+  'ngMaterial'
+]);
