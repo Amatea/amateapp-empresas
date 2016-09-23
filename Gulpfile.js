@@ -11,6 +11,15 @@ gulp.task('scripts', function(){
     .pipe(source('index.js'))
     .pipe(rename('app.js'))
     .pipe(gulp.dest('public'))
+}),
+
+gulp.task('angularjs', function(){
+    browserify('./src/angular.js')
+    .transform(babel)
+    .bundle()
+    .pipe(source('angular.js'))
+    .pipe(rename('ng-app.js'))
+    .pipe(gulp.dest('public'))
 })
 
-gulp.task('default', ['scripts']);
+gulp.task('default', ['scripts', 'angularjs']);

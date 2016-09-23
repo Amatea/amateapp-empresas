@@ -7,14 +7,6 @@ var morgan = require('morgan');
 
 var app = express();
 
-if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
-  } else if (process.env.NODE_ENV === 'production') {
-    app.use(compress());
-  }
-
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({
