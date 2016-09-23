@@ -1,8 +1,18 @@
 var gulp = require('gulp');
+var sass =  require('gulp-sass');
 var rename = require('gulp-rename');
 var babel = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+
+gulp.task('styles', function(){
+  gulp
+    .src('./src/index.scss')
+		.pipe(sass())
+		.pipe(rename('app.css'))
+		.pipe(gulp.dest('public'));
+
+})
 
 gulp.task('scripts', function(){
     browserify('./src/index.js')
@@ -22,4 +32,4 @@ gulp.task('angularjs', function(){
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('default', ['scripts', 'angularjs']);
+gulp.task('default', ['styles', 'scripts', 'angularjs']);
