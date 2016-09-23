@@ -69298,6 +69298,13 @@ var material = require('angular-material'),
     aria = require('angular-aria'),
     animate = require('angular-animate');
 
-angular.module('App', ['ngMaterial']);
+var App = angular.module('App', ['ngMaterial']);
+
+App.config(['$locationProvider', '$mdThemingProvider', function ($locationProvider, $mdThemingProvider) {
+  $mdThemingProvider.theme('default').primaryPalette('teal', {
+    'default': '500',
+    'hue-1': '700'
+  }).accentPalette('purple');
+}]);
 
 },{"angular":8,"angular-animate":2,"angular-aria":4,"angular-material":6}]},{},[9]);
