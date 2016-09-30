@@ -4,7 +4,8 @@ var material = require('angular-material'),
     animate = require('angular-animate');
 
 var App = angular.module('App', [
-  'ngMaterial'
+  'ngMaterial',
+  'leaflet-directive'
 ]);
 
 
@@ -18,3 +19,11 @@ App.config(['$locationProvider', '$mdThemingProvider',
       .accentPalette('purple');
   }
 ]);
+
+App.controller("SimpleMapController", [ '$scope', function($scope) {
+    angular.extend($scope, {
+        defaults: {
+            scrollWheelZoom: false
+        }
+    });
+}]);
