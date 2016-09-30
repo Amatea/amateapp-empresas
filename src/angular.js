@@ -20,10 +20,24 @@ App.config(['$locationProvider', '$mdThemingProvider',
   }
 ]);
 
-App.controller("SimpleMapController", [ '$scope', function($scope) {
+App.controller("mapController", [ '$scope', function($scope) {
     angular.extend($scope, {
-        defaults: {
-            scrollWheelZoom: false
-        }
-    });
+                yanaconas: {
+                    lat: 3.423004,
+                    lng: -76.606897,
+                    zoom: 15
+                },
+                defaults: {
+                    zoomAnimation: false,
+                    markerZoomAnimation: false,
+                    fadeAnimation: false
+                },
+                markers: {
+                    london: {
+                        lat: 51.505,
+                        lng: -0.09,
+                    }
+                }
+            });
+    
 }]);
