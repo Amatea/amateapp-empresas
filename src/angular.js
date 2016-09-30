@@ -30,13 +30,8 @@ App.controller("mapController", [ '$scope', function($scope) {
                 defaults: {
                     zoomAnimation: false,
                     markerZoomAnimation: false,
-                    fadeAnimation: false
-                },
-                markers: {
-                    london: {
-                        lat: 51.505,
-                        lng: -0.09,
-                    }
+                    fadeAnimation: false,
+                    scrollWheelZoom: false
                 }
             });
     

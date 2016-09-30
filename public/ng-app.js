@@ -69317,7 +69317,8 @@ App.controller("mapController", ['$scope', function ($scope) {
         defaults: {
             zoomAnimation: false,
             markerZoomAnimation: false,
-            fadeAnimation: false
+            fadeAnimation: false,
+            scrollWheelZoom: false
         },
         markers: {
             london: {
