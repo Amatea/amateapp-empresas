@@ -69319,12 +69319,6 @@ App.controller("mapController", ['$scope', function ($scope) {
             markerZoomAnimation: false,
             fadeAnimation: false,
             scrollWheelZoom: false
-        },
-        markers: {
-            london: {
-                lat: 51.505,
-                lng: -0.09
-            }
         }
     });
 }]);
