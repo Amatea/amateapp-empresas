@@ -10,16 +10,49 @@
 </head>
 <body ng-controller="mapController">
   <md-toolbar>
-    <h2>
-      <span>Aplicación de Gestión Huella Ecológica</span>
-    </h2>
-    <span flex></span>
+    <h2 layout-margin>Aplicación de Gestión Huella Ecológica</h2>
   </md-toolbar>
-  <md-toolbar class="md-hue-2">
+  <md-toolbar class="md-hue-2" layout="column">
+    <section layout-margin >
       <h2>Campañas de Compensación ::</h2>
-    <md-card>
-      <p>Hola</p>
-    </md-card>
+    </section>
+    <div layout="row" layout-xs="column">
+      <section class="EcoDesafio-card" layout-margin flex>
+        <h2><i class="fa fa-paw" aria-hidden="true"></i> EcoDesafío::</h2>
+        <div>
+          <h3>Ahorro de Energia</h3>
+          <p>0 Kw/Hora</p>
+        </div>
+      </section>
+      <section layout-margin flex>
+        <h2>Compensa tu Huella</h2>
+        <section layout="row">
+          <div class="user" layout-align="center center">
+            <a  href=""><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+            <p>Andres</p>
+            <p class="ico-arbol"><i class="fa fa-pagelines" aria-hidden="true"></i> 23</p>
+          </div>
+          <div class="user" layout-align="center center">
+            <a  href=""><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+            <p>Tatiana</p>
+            <div class="ico-arbol"><i class="fa fa-pagelines" aria-hidden="true"></i> 23</div>
+          </div>
+          <div class="user" layout-align="center center">
+            <a  href=""><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+            <p>Uriel</p>
+            <div class="ico-arbol"><i class="fa fa-pagelines" aria-hidden="true"></i> 23</div>
+          </div>
+          <div class="user" layout-align="center center">
+            <a  href=""><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+            <p>Ligia</p>
+            <div class="ico-arbol"><i class="fa fa-pagelines" aria-hidden="true"></i> 23</div>
+          </div>
+        </section>
+        <section class="jornada">
+          <h3>Proxima Jornada de Siembra</h3>
+        </section>
+      </section>
+    </div>
   </md-toolbar>
   <md-content class="md-padding" layout-xs="column" layout="row">
     <md-content flex>
@@ -40,7 +73,7 @@
           </md-card-title-media>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
-          <md-button>Action 1</md-button>
+          <md-button class="md-hue-2">Especies Sembradas</md-button>
           <md-button>Action 2</md-button>
         </md-card-actions>
       </md-card>
