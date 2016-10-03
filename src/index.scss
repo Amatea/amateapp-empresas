@@ -1,8 +1,15 @@
 @import "node_modules/angular-material/angular-material.scss";
 
+h1 { color: #004D40; }
+h2 { color: #009688; }
+
 .arboles-card {
-  font-size: 60px;
+  font-size: 44px;
   margin-top: 10px;
+}
+
+.ecojornadas { 
+  text-align: right; 
 }
 
 .EcoDesafio-card {
@@ -10,6 +17,33 @@
   border-radius: 10px;
 }
 
+.campanas-content {background: #E0F2F1;}
+
+.compensa-container { text-align: center; }
+
+.compensa-titulo { color: #004D40; }
+
+.usuario-compensa { 
+  margin-right: 10px;
+  text-align: center;
+ }
+
+.compensa-nombre { 
+  margin: 0px;
+}
+
+.compensa-ico { 
+  margin: 2px; 
+  color: #009688;
+}
+
+.leaftlet-container { margin: 0px; border: solid red 1px; }
+
+footer { 
+  background:  #009688;
+  margin: 0px;
+  color: white;
+}
 
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }

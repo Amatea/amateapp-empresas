@@ -16,7 +16,10 @@ App.config(['$locationProvider', '$mdThemingProvider',
         'default': '500',
         'hue-1': '700'
       })
-      .accentPalette('purple');
+      .accentPalette('purple', {
+        'default': '500'
+      })
+      .warnPalette('indigo')
   }
 ]);
 
