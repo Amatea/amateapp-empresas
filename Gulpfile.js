@@ -5,6 +5,12 @@ var babel = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 
+gulp.task('assets', function () {
+	gulp
+		.src('assets/*') //glob
+		.pipe(gulp.dest('public/img'));
+})
+
 gulp.task('styles', function(){
   gulp
     .src('./src/index.scss')
@@ -58,4 +64,4 @@ gulp.task('leafletjs-directive', function(){
     .pipe(rename('ng-leaflet-directive.js'))
     .pipe(gulp.dest('public'))
 })
-gulp.task('default', ['styles', 'stylesLeaflet', 'scripts', 'angularjs', 'leafletjs', 'leafletjs-directive']);
+gulp.task('default', ['assets', 'styles', 'stylesLeaflet', 'scripts', 'angularjs', 'leafletjs', 'leafletjs-directive']);
