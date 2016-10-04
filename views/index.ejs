@@ -11,7 +11,9 @@
 </head>
 <body>
   <section ng-view></section>
-
+  <script type="text/javascript">
+    window.user = <%- user || 'null' %>;
+  </script>
   <script src="ng-app.js"></script>
   <script src="ng-leaflet.js"></script>
   <script src="chart/chart.js"></script>

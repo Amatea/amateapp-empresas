@@ -19,15 +19,9 @@ app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
   res.render('index', {
-    title: 'Amateapp'
-  });
-})
-
-app.get('/huella', function (req, res){
-  res.render('huella', {
-    title: 'Amateapp - Huella',
+    title: 'Amateapp',
     user: JSON.stringify(req.user)
-  })
+  });
 })
 
 app.listen(3000, function (){

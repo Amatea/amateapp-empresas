@@ -69300,6 +69300,14 @@ var material = require('angular-material'),
 
 var App = angular.module('App', ['ngResource', 'ngRoute', 'ngMaterial', 'leaflet-directive', 'chart.js']);
 
+App.factory('Authentication', [function () {
+  this.user = window.user;
+
+  return {
+    user: this.user
+  };
+}]);
+
 App.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'partials/inicio.html'

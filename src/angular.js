@@ -11,6 +11,16 @@ var App = angular.module('App', [
   'chart.js'
 ]);
 
+App.factory('Authentication', [
+  function() {
+    this.user = window.user;
+
+    return {
+      user: this.user
+    };
+  }
+]);
+
 App.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
