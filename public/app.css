@@ -17735,7 +17735,8 @@ h2 {
   color: #009688; }
 
 .logo {
-  width: 90px; }
+  width: 180px;
+  margin: 9px; }
 
 .arboles-card {
   font-size: 44px;
