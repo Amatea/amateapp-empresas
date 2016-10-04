@@ -28,54 +28,54 @@ var getErrorMessage = function(err) {
 
 exports.create = function(req, res) {
 
-	var article = new Article(req.body);
+	var user = new User(req.body);
 
-	article.save(function(err) {
+	user.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: getErrorMessage(err)
 			});
 		} else {
-			res.json(article);
+			res.json(user);
 		}
 	});
 };
 
 exports.list = function(req, res) {
 
-	Article.find().exec(function(err, articles) {
+	User.find().exec(function(err, users) {
 		if (err) {
 			return res.status(400).send({
 				message: getErrorMessage(err)
 			});
 		} else {
-			res.json(articles);
+			res.json(users);
 		}
 	});
 };
 
 exports.read = function(req, res) {
-	res.json(req.article);
+	res.json(req.user);
 };
 
 exports.update = function(req, res) {
 
-	var article = req.article;
+	var user = req.user;
 
-	article.p1 = req.body.p1;
-  article.p2 = req.body.p2;
-  article.p3 = req.body.p3;
-  article.p4 = req.body.p4;
-  article.p5 = req.body.p5;
-  article.p6 = req.body.p6;
-  article.p7 = req.body.p7;
-  article.p8 = req.body.p8;
-  article.p9 = req.body.p9;
-  article.p10 = req.body.p10;
-  article.p11 = req.body.p11;
-  article.totalTrees = req.body.totalTrees;
+	user.p1 = req.body.p1;
+  user.p2 = req.body.p2;
+  user.p3 = req.body.p3;
+  user.p4 = req.body.p4;
+  user.p5 = req.body.p5;
+  user.p6 = req.body.p6;
+  user.p7 = req.body.p7;
+  user.p8 = req.body.p8;
+  user.p9 = req.body.p9;
+  user.p10 = req.body.p10;
+  user.p11 = req.body.p11;
+  user.totalTrees = req.body.totalTrees;
 
-	article.save(function(err) {
+	user.save(function(err) {
 		if (err) {
 
 			return res.status(400).send({
@@ -83,19 +83,19 @@ exports.update = function(req, res) {
 			});
 		} else {
 			
-			res.json(article);
+			res.json(user);
 		}
 	});
 };
 
 
-exports.articleByID = function(req, res, next, id) {
+exports.userByID = function(req, res, next, id) {
 
-	Article.findById(id).populate('creador', 'firstName lastName fullName').exec(function(err, article) {
+	User.findById(id).populate('creador', 'firstName lastName fullName').exec(function(err, user) {
 		if (err) return next(err);
-		if (!article) return next(new Error('Fallo al cargar el artículo ' + id));
+		if (!user) return next(new Error('Fallo al cargar el artículo ' + id));
 
-		req.article = article;
+		req.user = user;
 
 		next();
 	});
@@ -118,9 +118,7 @@ exports.renderSignup = function(req, res, next) {
   
   if (!req.user) {
     res.render('signup', {
-      
       title: 'Amateapp:: Signup',
-     
       messages: req.flash('error')
     });
   } else {
@@ -131,7 +129,7 @@ exports.renderSignup = function(req, res, next) {
 
 exports.signup = function(req, res, next) {
   
-    Article.register(new Article({ 
+    User.register(new User({ 
         username: req.body.username,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -156,7 +154,7 @@ exports.signup = function(req, res, next) {
 
 exports.saveOAuthUserProfile = function(req, profile, done) {
   
-  Article.findOne({
+  User.findOne({
     provider: profile.provider,
     providerId: profile.providerId
   }, function(err, user) {
@@ -169,9 +167,9 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
        
         var possibleUsername = profile.username || ((profile.email) ? profile.email.split('@')[0] : '');
 
-        Article.findUniqueUsername(possibleUsername, null, function(availableUsername) {
+        User.findUniqueUsername(possibleUsername, null, function(availableUsername) {
           profile.username = availableUsername;
-          user = new Article(profile);
+          user = new User(profile);
           user.save(function(err) {
             
             return done(err, user);

@@ -6,6 +6,7 @@ var	config = require('./config'),
 
 module.exports = function() {
 	
+	mongoose.Promise = global.Promise;
 	var db = mongoose.connect(config.db);
 
 	require('../dbconection/userConection');

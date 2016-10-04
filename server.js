@@ -49,6 +49,18 @@ app.get('/', function (req, res) {
   });
 })
 
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'email' ] }));
+  app.get('/auth/facebook/callback', passport.authenticate('facebook',{ 
+    successRedirect: '/huella', 
+    failureRedirect: '/signin' 
+  }));
+
+ app.get('/signout', function (req, res){
+   req.logout();
+    res.redirect('/');
+
+ });
+
 var db = mongoose();
 var passport_conf = passport_conf();
 

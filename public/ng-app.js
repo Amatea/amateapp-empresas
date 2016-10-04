@@ -69308,13 +69308,18 @@ App.factory('Authentication', [function () {
   };
 }]);
 
-App.config(['$routeProvider', function ($routeProvider) {
+App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider.when('/', {
     templateUrl: 'partials/inicio.html'
   }).when('/huella', {
     templateUrl: 'partials/huella.html'
   }).otherwise({
     redirectTo: '/'
+  });
+
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
   });
 }]);
 

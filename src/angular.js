@@ -21,8 +21,8 @@ App.factory('Authentication', [
   }
 ]);
 
-App.config(['$routeProvider',
-	function($routeProvider) {
+App.config(['$routeProvider', '$locationProvider',
+	function($routeProvider, $locationProvider) {
 		$routeProvider.
 		when('/', {
       		templateUrl: 'partials/inicio.html'
@@ -33,6 +33,11 @@ App.config(['$routeProvider',
     otherwise({
       		redirectTo: '/'
     	});
+
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
 	}
 ]);
 
