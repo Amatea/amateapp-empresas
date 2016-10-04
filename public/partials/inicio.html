@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="es" ng-app="App">
-<head>
-  <meta charset="UTF-8">
-  <title>Amateapp-empresas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="	https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="app.css">
-  <link rel="stylesheet" type="text/css" href="leaflet.css">
-</head>
-<body ng-controller="mapController">
+<section ng-controller="mapController">
   <md-toolbar>
     <img class="logo" src="img/logo.png" alt="logo">
   </md-toolbar>
@@ -79,7 +68,7 @@
   </md-content>
   <md-content layout-margin>
     <h1><i class="material-icons">&#xE2BD;</i> Captura de CO2</h1>
-    <canvas id="myChart"></canvas>
+    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"></canvas> 
   </md-content>
   <md-content class="md-padding" layout-xs="column" layout="row">
   <md-card >
@@ -121,17 +110,13 @@
     <h1 layout-margin><i class="material-icons md-36">add_location</i>Mapa de Siembras</h1>
     <leaflet center="yanaconas" markers="mapMarkers"  defaults="defaults" width="100%" height="480"></leaflet>
   </md-conten>
-  <footer layout.margin>
+  
+</section>
+<footer layout.margin>
     <section>
       <p>Con el apoyo de: Parques Nacionales Naturales</p>
     </section>
     <section>
       <p>amateapp © 2016</p>
     </section>
-  </footer>
-  <script src="app.js"></script>
-  <script src="ng-app.js"></script>
-  <script src="ng-leaflet.js"></script>
-  <script src="ng-leaflet-directive.js"></script>
-</body>
-</html>
+</footer>

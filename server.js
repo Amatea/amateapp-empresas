@@ -15,11 +15,19 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('index', {
+    title: 'Amateapp'
+  });
+})
+
+app.get('/huella', function (req, res){
+  res.render('huella', {
+    title: 'Amateapp - Huella',
+    user: JSON.stringify(req.user)
+  })
 })
 
 app.listen(3000, function (){

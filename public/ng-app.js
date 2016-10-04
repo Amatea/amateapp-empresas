@@ -69298,31 +69298,62 @@ var material = require('angular-material'),
     aria = require('angular-aria'),
     animate = require('angular-animate');
 
-var App = angular.module('App', ['ngMaterial', 'leaflet-directive']);
+var App = angular.module('App', ['ngResource', 'ngRoute', 'ngMaterial', 'leaflet-directive', 'chart.js']);
+
+App.config(['$routeProvider', function ($routeProvider) {
+  $routeProvider.when('/', {
+    templateUrl: 'partials/inicio.html'
+  }).otherwise({
+    redirectTo: '/'
+  });
+}]);
 
 App.config(['$locationProvider', '$mdThemingProvider', function ($locationProvider, $mdThemingProvider) {
-    $mdThemingProvider.theme('default').primaryPalette('teal', {
-        'default': '500',
-        'hue-1': '700'
-    }).accentPalette('purple', {
-        'default': '500'
-    }).warnPalette('indigo');
+  $mdThemingProvider.theme('default').primaryPalette('teal', {
+    'default': '500',
+    'hue-1': '700'
+  }).accentPalette('purple', {
+    'default': '500'
+  }).warnPalette('indigo');
 }]);
 
 App.controller("mapController", ['$scope', function ($scope) {
-    angular.extend($scope, {
-        yanaconas: {
-            lat: 3.423004,
-            lng: -76.606897,
-            zoom: 15
-        },
-        defaults: {
-            zoomAnimation: false,
-            markerZoomAnimation: false,
-            fadeAnimation: false,
-            scrollWheelZoom: false
-        }
-    });
+  angular.extend($scope, {
+    yanaconas: {
+      lat: 3.423004,
+      lng: -76.606897,
+      zoom: 15
+    },
+    defaults: {
+      zoomAnimation: false,
+      markerZoomAnimation: false,
+      fadeAnimation: false,
+      scrollWheelZoom: false
+    }
+  });
+
+  $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+  $scope.series = ['Series A', 'Series B'];
+  $scope.data = [[65, 59, 80, 81, 56, 55, 40], [28, 48, 40, 19, 86, 27, 90]];
+  $scope.onClick = function (points, evt) {
+    console.log(points, evt);
+  };
+  $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+  $scope.options = {
+    scales: {
+      yAxes: [{
+        id: 'y-axis-1',
+        type: 'linear',
+        display: true,
+        position: 'left'
+      }, {
+        id: 'y-axis-2',
+        type: 'linear',
+        display: true,
+        position: 'right'
+      }]
+    }
+  };
 }]);
 
 },{"angular":8,"angular-animate":2,"angular-aria":4,"angular-material":6}]},{},[9]);
