@@ -16,10 +16,10 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 
-app.set('view engine', 'html')
+app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello there!'});
+  res.render('index');
 })
 
 app.listen(3000, function (){
