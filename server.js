@@ -55,6 +55,17 @@ app.get('/profile', function(req, res){
   })
 })
 
+app.get('/oauth/google', passport.authenticate('google', {
+    scope: [
+      'https://www.googleapis.com/auth/userinfo.profile',
+      'https://www.googleapis.com/auth/userinfo.email',
+    ],
+    failureRedirect: '/signin'
+  }));
+  app.get('/oauth/google/callback', passport.authenticate('google', {
+    failureRedirect: '/signin',
+    successRedirect: '/'
+  }));
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'email' ] }));
   app.get('/auth/facebook/callback', passport.authenticate('facebook',{ 
