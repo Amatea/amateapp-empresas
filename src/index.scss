@@ -1,13 +1,30 @@
 @import "node_modules/angular-material/angular-material.scss";
 
-h1 { color: #004D40; }
+
 h2 { color: #009688; }
+
+hr {
+  margin-top: 30px;
+}
+
+.iphone {
+  max-width: 80%;
+}
 
 .logo {
   width: 180px;
   margin: 9px;
 }
 
+.login-box {
+  margin-top: 30px;
+}
+.input-box {
+  margin-top: 40px;
+}
+.boton-box {
+  margin-top: 20px;
+}
 
 .arboles-card {
   font-size: 44px;

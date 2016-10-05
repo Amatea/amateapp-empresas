@@ -1,42 +1,41 @@
 <section ng-controller="huellaController">
   <section ng-show="!authentication.user">
-    <ng-container>
-
-        <div>
-          <img class="iphone" src="iphone.png" />
+    <div>
+      <md-container layout="row" >
+        <div hide-xs layout-margin layout-padding flex="40">
+          <img class="iphone" src="img/iphone.png" />
         </div>
-        <div class="col s12 m7">
-          <div class="row">
-            <div class="signup-box">
-              <form class="signup-form" action="/signin" method="post">
-                <h1 class="sig_subt">Regístrate para conocer tu huella</h1>
-                <div class="section">
-                  <a class="btn btn-fb hide-on-small-only btn_icon" href="/auth/facebook"><i class="fa fa-facebook-official"></i> Iniciar con facebook</a>
-                  <a class="btn btn-fb hide-on-small-only btn_icon_g" href="/oauth/google"><i class="fa fa-google-plus" aria-hidden="true"></i> Iniciar con Google</a>
-                  <a class="btn btn-fb hide-on-med-and-up btn_icon" href="/auth/facebook"><i class="fa fa-facebook-official"></i> iniciar sesion</a>
-                  <a class="btn btn-fb hide-on-med-and-up btn_icon_g" href="/oauth/google"><i class="fa fa-google-plus" aria-hidden="true"></i> iniciar sesion</a>
-                </div>
-                <div class="divider"></div>
-                <div class="section">
-                  <input type="text" name="username" placeholder="username" />
-                  <input type="password" name="password" placeholder="password" />
-                  <button class="btn waves-effect waves-light btn-signup" type="submit">Iniciar Sesion</button>
-                </div>
-              </form>
-            </div>
+        <md-container layout="column" layout-align="center center" flex>
+          <h2 layout-align="center center">Conoce tu huella</h2>
+          <form  action="/signin" method="post">
+            <section layout="column" layout-align="center center">
+              <a href="/auth/facebook"><md-button class="md-raised md-primary "><i class="fa fa-facebook-official fa-lg"></i> Iniciar con facebook</md-button></a>
+              <a href="/oauth/google"><md-button class="md-raised md-primary boton-box"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i> Iniciar con Google </md-button></a>
+            </section>
+            <hr>
+            <section class="input-box" layout="column">
+              <md-input-container >
+                <label>Username</label>
+                <md-icon md-svg-src="img/face.svg" class="name"></md-icon>
+                <input type="text" name="username">
+              </md-input-container>
+              <md-input-container>
+                <label>Password</label>
+                <md-icon md-svg-src="img/code.svg" class="name"></md-icon>
+                <input type="password" name="password">
+              </md-input-container>
+              <md-button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Iniciar Sesion</md-button>
+            <section>
+          </form>
+        
+          <div class="login-box">
+            ¿No tienes una cuenta? <a href="/signup">Regístrate</a>
           </div>
-        </div>
-          <div class="row">
-            <div class="login-box">
-              ¿No tienes una cuenta? <a href="/signup">Regístrate</a>
-            </div>
-          </div>
-        </div>
-     
-    </ng-container>
+        </md-container>
+      </md-container>
+    </div>
   </section>
-
-
-  <div ng-show="authentication.user" >
-  <ux></ux>
+    <div ng-show="authentication.user" >
+      <ux></ux>
+    </div>
 </section>

@@ -1,0 +1,35 @@
+<section ng-controller="huellaController">
+  <section ng-show="!authentication.user">
+    <div layout="row" >
+
+            <div hide-xs flex>
+              <img class="iphone" src="img/iphone.png" />
+            </div>
+      
+            <md-container layout="column" layout-align="center center" flex>
+              <form class="signup-form" action="/signin" method="post">
+                <h1 class="sig_subt">Regístrate para conocer tu huella</h1>
+                <section layout="column">
+                  <md-button><a  href="/auth/facebook"><i class="fa fa-facebook-official"></i> Iniciar con facebook</a></md-button>
+                  <a class="btn btn-fb hide-on-small-only btn_icon_g" href="/oauth/google"><i class="fa fa-google-plus" aria-hidden="true"></i> Iniciar con Google</a>
+                  <a class="btn btn-fb hide-on-med-and-up btn_icon" href="/auth/facebook"><i class="fa fa-facebook-official"></i> iniciar sesion</a>
+                  <a class="btn btn-fb hide-on-med-and-up btn_icon_g" href="/oauth/google"><i class="fa fa-google-plus" aria-hidden="true"></i> iniciar sesion</a>
+                </section>
+            
+                <section layout="column">
+                  <input type="text" name="username" placeholder="username" />
+                  <input type="password" name="password" placeholder="password" />
+                  <md-button type="submit">Iniciar Sesion</md-button>
+                <section>
+              </form>
+           
+              <div class="login-box">
+                ¿No tienes una cuenta? <a href="/signup">Regístrate</a>
+              </div>
+            </md-container>
+    </div>
+  </section>
+  
+    <div ng-show="authentication.user" >
+      <ux></ux>
+</section>
