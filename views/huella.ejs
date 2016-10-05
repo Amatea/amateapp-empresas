@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="App">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="	https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <link rel="stylesheet" type="text/css" href="leaflet.css">
+</head>
+<body>
+  <section ng-view></section>
+  <script type="text/javascript">
+    window.usere = <%- user || 'null' %>;
+  </script>
+  <script src="ng-app.js"></script>
+  <script src="ng-leaflet.js"></script>
+  <script src="chart/chart.js"></script>
+  <script src="chart/angular-chart.js"></script>
+  <script src="ng-leaflet-directive.js"></script>
+  <script src="https://code.angularjs.org/1.4.4/angular-resource.js"></script>
+	<script src="https://code.angularjs.org/1.4.4/angular-route.js"></script>
+</body>
+</html>

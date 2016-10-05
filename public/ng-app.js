@@ -69308,18 +69308,11 @@ App.factory('Authentication', [function () {
   };
 }]);
 
-App.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+App.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'partials/inicio.html'
-  }).when('/huella', {
-    templateUrl: 'partials/huella.html'
-  }).otherwise({
-    redirectTo: '/'
-  });
-
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
+  }).when('/profile', {
+    templateUrl: 'partials/profile.html'
   });
 }]);
 
@@ -69330,7 +69323,15 @@ App.directive('chart', function () {
   };
 });
 
+App.directive('ux', function () {
+  return {
+    restrict: 'E',
+    templateUrl: '/partials/ux.html'
+  };
+});
+
 App.config(['$locationProvider', '$mdThemingProvider', function ($locationProvider, $mdThemingProvider) {
+  $locationProvider.hashPrefix('!');
   $mdThemingProvider.theme('default').primaryPalette('teal', {
     'default': '500',
     'hue-1': '700'

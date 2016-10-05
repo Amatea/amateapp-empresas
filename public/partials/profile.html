@@ -1,0 +1,23 @@
+<div layout="row" layout-align="center center">
+      <div>
+        <div layout="row">
+          <div>
+            <img class="avatar" src="{{authentication.user.providerData.picture}}" alt="">
+          </div>
+          <div>
+            <h2 class="ini_name">Hola <span ng-bind="authentication.user.firstName"></span></h2>
+              <ul>
+                <li class="experiencia"><a href="/#!/articles/edit/{{authentication.user._id}}">Inicia tu Experiencia</a></li>
+              </ul>
+          </div>
+        </div>
+        <span>Este año debes sembrar:
+           <h2><i class="fa fa-pagelines" aria-hidden="true"></i> {{authentication.user.totalTrees}} Árboles</h2>
+           <div><a href="/signout">salir</a></div>  
+        </span>
+      </div>
+
+      <div hide-xs>
+        <img class="jaguar" src="jaguar.png" alt="">
+      </div>
+    </div>

@@ -1,0 +1,123 @@
+<section ng-controller="mapController">
+  <md-toolbar>
+    <img class="logo" src="img/logo.png" alt="logo">
+    <a href="/signout">salir</a>
+  </md-toolbar>
+  <md-content class="campanas-content" layout="column">
+    <section layout-margin layout="row">
+      <h2 flex><i class="fa fa-paw" aria-hidden="true"></i> Campañas Ecológicas::</h2>
+      <div class="ecojornadas">
+        <a href=""><i class="material-icons md-36">&#xE8A3;</i></a><br>
+        <span>EcoJornadas</span>
+      </div>
+    </section>
+    <div class="compensa-container" layout="row" layout-xs="column">
+      <section class="EcoDesafio-card" layout-margin flex>
+        <h2><i class="fa fa-paw" aria-hidden="true"></i> EcoDesafío::</h2>
+        <section layout-align="center center" layout="row">
+          <div class="usuario-compensa">
+              <a  href=""><i class="material-icons md-48">account_circle</i></i></a>
+              <p class="compensa-nombre">Andres</p>
+              <p class="compensa-ico"><i class="fa fa-envira" aria-hidden="true"></i> 13</p>
+            </div>
+            <div class="usuario-compensa">
+              <a  href=""><i class="material-icons md-48">account_circle</i></i></a>
+              <p class="compensa-nombre">Andres</p>
+              <p class="compensa-ico"><i class="fa fa-envira" aria-hidden="true"></i> 13</p>
+            </div>
+            <div class="usuario-compensa">
+              <a  href=""><i class="material-icons md-48">account_circle</i></i></a>
+              <p class="compensa-nombre">Andres</p>
+              <p class="compensa-ico"><i class="fa fa-envira" aria-hidden="true"></i> 13</p>
+            </div>
+        </section>
+        <div>
+          <h3>Ahorro de Energia Kw/Hora</h3>
+          <h2>120</h2>
+        </div>
+      </section>
+      <section class="compensa-container" layout-margin flex>
+        <h2 class="compensa-titulo"><i class="fa fa-paw" aria-hidden="true"></i> Compensa tu Huella ::</h2>
+        <section layout-align="center center" layout="row">
+          <div class="usuario-compensa">
+            <a  href=""><i class="material-icons md-48">account_circle</i></i></a>
+            <p class="compensa-nombre">Andres</p>
+            <p class="compensa-ico"><i class="fa fa-pagelines" aria-hidden="true"></i> 23</p>
+          </div>
+          <div class="usuario-compensa">
+            <a  href=""><i class="material-icons md-48">account_circle</i></i></a>
+            <p class="compensa-nombre">Tatina</p>
+            <p class="compensa-ico"><i class="fa fa-pagelines" aria-hidden="true"></i> 18</p>
+          </div>
+          <div class="usuario-compensa">
+            <a  href=""><i class="material-icons md-48">account_circle</i></i></a>
+            <p class="compensa-nombre">Uriel</p>
+            <p class="compensa-ico"><i class="fa fa-pagelines" aria-hidden="true"></i> 10</p>
+          </div>
+          <div class="usuario-compensa">
+            <a  href=""><i class="material-icons md-48">account_circle</i></i></a>
+            <p class="compensa-nombre">Ligia</p>
+            <p class="compensa-ico"><i class="fa fa-pagelines" aria-hidden="true"></i> 2</p>
+          </div>
+        </section>
+        <section class="jornada">
+          <md-button class="md-raised md-primary">Conoce Tu Huella</md-button>
+          <p>¿Cuántos árboles debo sembrar este año?</p>
+        </section>
+      </section>
+    </div>
+  </md-content>
+  <md-content layout-margin>
+    <h1><i class="material-icons">&#xE2BD;</i> Captura de CO2</h1>
+    <chart></chart>
+  </md-content>
+  <md-content class="md-padding" layout-xs="column" layout="row">
+  <md-card >
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Árboles Sembrados ::</span>
+          <span class="md-subhead">Nombre Compañia</span>
+          <span class="arboles-card"><i class="fa fa-pagelines" aria-hidden="true"></i> 2.560</span>
+          <span class="md-subhead">Árboles</span>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"><img src="img/siembra-card.jpeg" alt=""></div>
+        </md-card-title-media>
+      </md-card-title>
+      <md-card-actions layout="row">
+        <md-button class="md-hue-2">Especies Sembradas</md-button>
+        <md-button>Action 2</md-button>
+      </md-card-actions>
+    </md-card>
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Captura de CO2 ::</span>
+          <span class="md-subhead">Nombre Compañia</span>
+          <span class="arboles-card"><i class="fa fa-car" aria-hidden="true"></i> 1.500</span>
+          <span class="md-subhead">Ton / CO2</span>
+      </md-card-title-text>
+      <md-card-title-media>
+        <div class="md-media-lg card-media"><img src="img/carbono-card.jpeg" alt=""></div>
+      </md-card-title-media>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button>Action 1</md-button>
+        <md-button>Action 2</md-button>
+      </md-card-actions>
+    </md-card>
+  </md-content>
+  <md-conten class="mapa-content">
+    <h1 layout-margin><i class="material-icons md-36">add_location</i>Mapa de Siembras</h1>
+    <leaflet center="yanaconas" markers="mapMarkers"  defaults="defaults" width="100%" height="480"></leaflet>
+  </md-conten>
+  
+</section>
+<footer layout.margin>
+    <section>
+      <p>Con el apoyo de: Parques Nacionales Naturales</p>
+    </section>
+    <section>
+      <p>amateapp © 2016</p>
+    </section>
+</footer>

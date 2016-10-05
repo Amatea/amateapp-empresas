@@ -49,9 +49,16 @@ app.get('/', function (req, res) {
   });
 })
 
+app.get('/profile', function(req, res){
+  res.render('profile.ejs', {
+    title: 'hola',
+  })
+})
+
+
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'email' ] }));
   app.get('/auth/facebook/callback', passport.authenticate('facebook',{ 
-    successRedirect: '/huella', 
+    successRedirect: '/', 
     failureRedirect: '/signin' 
   }));
 
